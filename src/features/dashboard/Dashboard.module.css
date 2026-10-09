@@ -1,0 +1,478 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0a1a14, #0f3d2f 50%, #0f6e56);
+  border-radius: 18px;
+  padding: 16px;
+  color: #fff;
+}
+
+.heroTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.greeting {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+}
+
+.agentName {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.agentSub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 3px;
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.onQueuePill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+/* KPI row */
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.kpiCard {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.kpiClickable {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.kpiClickable:hover {
+  background: rgba(255,255,255,0.16);
+}
+
+.kpiVal {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.kpiLabel {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.kpiTrend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.kpiUp   { color: #5dcaa5; }
+.kpiDown { color: #fca5a5; }
+.kpiLive { color: #ffd700; }
+
+/* Main grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Progress card */
+.card {
+  background: #fff;
+  border: 1px solid #ece7fa;
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.cardEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #8e8e93;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
+}
+
+.eyeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green-600);
+  flex-shrink: 0;
+}
+
+.progGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.progMetric {
+  background: #f7f7f9;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.progVal {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.progDelta {
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.progGood { color: var(--green-600); }
+.progWarn { color: var(--amber); }
+
+.progLabel {
+  font-size: 12px;
+  color: #8e8e93;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Section head */
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #8e8e93;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.sectionLink {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--green-700);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Queue */
+.queueList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.queueRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #ece7fa;
+  border-radius: 12px;
+  padding: 9px 11px;
+}
+
+.queueAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f2f2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.queueBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.queueName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.queueIntent {
+  font-size: 12.5px;
+  color: #8e8e93;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.waitBadge {
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Earnings card */
+.earningsCard {
+  background: #fff;
+  border: 1px solid #ececef;
+  border-radius: 16px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.earningsHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.earningsTitle {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.earningsSlab {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.earningsRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.earningsValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--green-700);
+  line-height: 1.1;
+}
+
+.earningsCoached {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.earningsBarBg {
+  height: 7px;
+  background: #eef0f2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.earningsBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1d9e75, #5dcaa5);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Tasks card */
+.tasksCard {
+  background: linear-gradient(135deg, #3b2304, #92400e);
+  border-radius: 16px;
+  padding: 11px 12px;
+  box-shadow: 0 4px 14px rgba(146,64,14,0.25);
+}
+
+.tasksHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tasksIcon {
+  font-size: 17px;
+}
+
+.tasksTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  flex: 1;
+}
+
+.tasksBadge {
+  background: #ef4444;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.taskItem {
+  background: #fff;
+  border-radius: 11px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.taskItem:hover {
+  background: #f8f8f8;
+}
+
+.taskIconWrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.taskBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.taskLabel {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskSub {
+  font-size: 12px;
+  color: #8e8e93;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.taskArrow {
+  color: #c5c5c5;
+  flex-shrink: 0;
+}
+
+/* Charts */
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.chartCard {
+  background: #fff;
+  border: 1px solid #ece7fa;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.chartTitle {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .kpiRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartsRow {
+    grid-template-columns: 1fr;
+  }
+}
