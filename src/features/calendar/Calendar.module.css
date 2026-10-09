@@ -1,0 +1,485 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #8e8e93;
+  margin-top: 2px;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0f6e56;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.addBtn:hover {
+  background: #0c5643;
+}
+
+.monthNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ece7fa;
+}
+
+.monthLabel {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.todayBtn {
+  background: #f2f2f7;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.iconBtn {
+  background: transparent;
+  border: 1px solid #e5e5ea;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.iconBtn:hover, .todayBtn:hover {
+  background: #e5e5ea;
+}
+
+.calendarCard {
+  background: #ffffff;
+  border: 1px solid #ece7fa;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.weekdayRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8e8e93;
+  padding: 4px 0;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.emptyDay {
+  height: 42px;
+}
+
+.dayCell {
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.dayCell:hover {
+  background: #f4f4f7;
+}
+
+.dayNum {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dayToday .dayNum {
+  color: #0f6e56;
+  font-weight: 800;
+}
+
+.daySelected {
+  background: #0f6e56 !important;
+  color: #ffffff !important;
+}
+
+.daySelected .dayNum {
+  color: #ffffff;
+}
+
+.eventDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c8860a;
+  position: absolute;
+  bottom: 5px;
+}
+
+.daySelected .eventDot {
+  background: #ffffff;
+}
+
+.scheduleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tabToggleRow {
+  display: flex;
+  gap: 8px;
+  background: #f2f2f7;
+  padding: 4px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.tabToggle {
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #6b6b74;
+  cursor: pointer;
+}
+
+.tabToggleActive {
+  background: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eventCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #ece7fa;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.eventTimePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.eventDateBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 4px 8px;
+  min-width: 44px;
+}
+
+.badgeMonth {
+  font-size: 10px;
+  font-weight: 800;
+  color: #166534;
+}
+
+.badgeDay {
+  font-size: 15px;
+  font-weight: 800;
+  color: #166534;
+  line-height: 1;
+}
+
+.eventBody {
+  flex: 1;
+}
+
+.eventTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.eventMeta {
+  font-size: 12px;
+  color: #8e8e93;
+  margin-top: 2px;
+}
+
+.noEvents {
+  background: #ffffff;
+  border: 1px solid #ece7fa;
+  border-radius: 12px;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.noEventsEmoji {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.noEventsText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b6b74;
+}
+
+.quickAddLink {
+  background: none;
+  border: none;
+  color: #0f6e56;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modalCard {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modalTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: #8e8e93;
+  cursor: pointer;
+}
+
+.inviteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.formLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+}
+
+.formInput {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #0f6e56;
+}
+
+.readOnlyInput {
+  background: #f9fafb;
+}
+
+.sharesList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shareItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.shareItem:hover {
+  background: #f9fafb;
+}
+
+.shareItemChecked {
+  border-color: #0f6e56;
+  background: #f0fdf4;
+}
+
+.shareIcon {
+  font-size: 18px;
+}
+
+.shareText {
+  flex: 1;
+}
+
+.shareName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.shareSub {
+  font-size: 11.5px;
+  color: #8e8e93;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1.5px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shareItemChecked .checkbox {
+  background: #0f6e56;
+  border-color: #0f6e56;
+  color: #ffffff;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancelBtn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0f6e56;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
