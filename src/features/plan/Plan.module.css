@@ -1,0 +1,74 @@
+.planContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.tabNav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #ece7fa;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.tabBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #6b6b74;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tabBtn:hover {
+  background: #f8fafc;
+  color: #1a1a1a;
+}
+
+.tabActive {
+  background: #0f6e56 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(15, 110, 86, 0.25);
+}
+
+.tabBadge {
+  font-size: 11px;
+  font-weight: 800;
+  background: #f2f2f7;
+  color: #4b5563;
+  padding: 2px 7px;
+  border-radius: 10px;
+}
+
+.tabActive .tabBadge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.badgeWarning {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.tabActive .badgeWarning {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.tabContent {
+  width: 100%;
+}
