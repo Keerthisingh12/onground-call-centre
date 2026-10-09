@@ -1,0 +1,161 @@
+.topbar {
+  min-height: var(--topbar-height);
+  background: var(--topbar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+  gap: 12px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobileLogo {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobileMark {
+  width: 28px;
+  height: 28px;
+  background: var(--green-600);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+}
+
+.mobileText {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.greeting {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scorePill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 3px 10px 3px 8px;
+  cursor: default;
+}
+
+.scoreVal {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--green-400);
+}
+
+.scoreLabel {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+}
+
+.rankPill {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(255,215,0,0.14);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 20px;
+  padding: 3px 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+.notifBtn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5b52, #e2233d);
+  border: 2px solid rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(226,35,61,0.45);
+}
+
+.notifDot {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffd400;
+  border: 2px solid #0a1a14;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+.agentBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #0a2a1e, var(--green-600));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid rgba(255,215,0,0.5);
+  overflow: hidden;
+}
+
+.agentEmoji {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.agentInitials {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 8px 14px;
+  }
+
+  .mobileLogo {
+    display: flex;
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .scorePill {
+    display: none;
+  }
+}
