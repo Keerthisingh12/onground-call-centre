@@ -16,7 +16,7 @@ This repository contains a high-fidelity, responsive frontend reconstruction of 
 
 ## 🚀 Live Demo & Repository
 
-- **Public Live Demo:** [https://onground-call-centre.vercel.app](https://onground-call-centre.vercel.app) *(or Vercel deployed instance)*
+- **Public Live Demo:** [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/)
 - **GitHub Repository:** [https://github.com/Keerthisingh12/onground-call-centre](https://github.com/Keerthisingh12/onground-call-centre)
 
 ---
