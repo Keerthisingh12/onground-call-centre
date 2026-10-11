@@ -94,6 +94,7 @@ vi.mock('livekit-client', () => {
 // ---------------------------------------------------------------------------
 // Browser API mocks
 // ---------------------------------------------------------------------------
+
 beforeAll(() => {
   Object.defineProperty(navigator, 'mediaDevices', {
     writable: true,

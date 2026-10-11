@@ -25,5 +25,10 @@ export default defineConfig(({ command }) => ({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
+    // Provide a dummy token server ID so module-level TOKEN_SERVER_ID is
+    // defined in tests. The actual LiveKit fetch is mocked in each test file.
+    env: {
+      VITE_LIVEKIT_TOKEN_SERVER_ID: 'test-token-server-id',
+    },
   },
 }));
