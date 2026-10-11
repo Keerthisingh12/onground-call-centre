@@ -427,19 +427,30 @@ export default function LiveAudioDemo() {
             </div>
           )}
 
-          {/* How-to banner */}
-          <div className={styles.howto}>
-            <strong>How to test two-way audio:</strong>
-            <ol className={styles.howtoList}>
-              <li>Open this page in <strong>two separate browser tabs</strong> (or devices on the same network).</li>
-              <li>Use the <strong>same room name</strong> in both tabs.</li>
-              <li>Use <strong>different display names</strong> (e.g. &quot;Alice&quot; and &quot;Bob&quot;).</li>
-              <li>Click <strong>Join Room</strong> in both — you'll hear each other live.</li>
+          {/* ── Reviewer instruction panel ── */}
+          <div className={styles.reviewPanel} id="lad-reviewer-panel">
+            <p className={styles.reviewPanelTitle}>
+              <IconRadio size={15} aria-hidden="true" />
+              Try the live audio call
+            </p>
+            <ol className={styles.reviewPanelList}>
+              <li>Open this Live Audio Demo page in <strong>two separate browser tabs</strong>, or on two different devices.</li>
+              <li>Enter the <strong>same room name</strong> in both tabs.</li>
+              <li>Enter a <strong>different display name</strong> in each tab (e.g. &quot;Alice&quot; and &quot;Bob&quot;).</li>
+              <li>Click <strong>Join Room</strong> in both tabs and allow microphone access when prompted.</li>
+              <li>Speak in one tab / device and confirm the other participant can hear you.</li>
+              <li>If a yellow <strong>Enable Audio</strong> banner appears, click it once to unblock browser autoplay.</li>
             </ol>
-            <button className={styles.copyBtn} onClick={handleCopyLink} title="Copy link to share">
-              {copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
-              {copied ? 'Copied!' : 'Copy page link to share'}
-            </button>
+            <p className={styles.reviewPanelNote}>
+              🎧 Headphones recommended to avoid audio feedback between tabs on the same machine.
+              No installation required — the call runs entirely in the browser via LiveKit WebRTC.
+            </p>
+            <div className={styles.reviewPanelActions}>
+              <button className={styles.copyBtn} onClick={handleCopyLink} title="Copy link to share">
+                {copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
+                {copied ? 'Copied!' : 'Copy page link to share'}
+              </button>
+            </div>
           </div>
 
           <div className={styles.formGroup}>

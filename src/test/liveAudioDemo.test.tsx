@@ -168,15 +168,33 @@ describe('LiveAudioDemo – join form', () => {
     );
   });
 
-  it('shows the how-to instructions banner', () => {
+  it('shows the reviewer instruction panel with the correct title', () => {
     renderComponent();
-    expect(screen.getByText(/How to test two-way audio/i)).toBeInTheDocument();
+    expect(screen.getByText(/Try the live audio call/i)).toBeInTheDocument();
+  });
+
+  it('shows all 6 numbered steps in the reviewer panel', () => {
+    renderComponent();
+    expect(screen.getByText(/two separate browser tabs/i)).toBeInTheDocument();
+    expect(screen.getByText(/same room name/i)).toBeInTheDocument();
+    expect(screen.getByText(/different display name/i)).toBeInTheDocument();
+    // Step 4 spans <strong>Join Room</strong> + text — match the surrounding text
+    expect(screen.getByText(/allow microphone access when prompted/i)).toBeInTheDocument();
+    expect(screen.getByText(/Speak in one tab/i)).toBeInTheDocument();
+    // Step 6: "Enable Audio" is in a <strong>, match the banner text around it
+    expect(screen.getByText(/banner appears, click it once/i)).toBeInTheDocument();
+  });
+
+  it('shows the headphones recommendation note', () => {
+    renderComponent();
+    expect(screen.getByText(/Headphones recommended/i)).toBeInTheDocument();
   });
 
   it('has a copy-link button', () => {
     renderComponent();
     expect(screen.getByTitle(/Copy link to share/i)).toBeInTheDocument();
   });
+
 });
 
 // ---------------------------------------------------------------------------
