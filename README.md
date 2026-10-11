@@ -1,192 +1,281 @@
 # On-Ground.ai — Agentic Call Centre Frontend
 
-> **Hiring Assignment Submission**  
-> **Role:** Forward Deployed Engineer / Agentic Engineer — Intern + Full-Time  
-> **Candidate:** Keerthi G Singh  
-> **Company:** On-Ground.ai, Bengaluru  
-> **Target Sector Implementation:** Retail (The Sleep Company)
+**Hiring Assignment Submission | Forward Deployed Engineer / Agentic Engineer**
 
----
+| Detail | Information |
+|---|---|
+| Candidate | Keerthi G Singh |
+| Company | On-Ground.ai |
+| Target Sector | Retail |
+| Reference Brand | The Sleep Company |
+| Project Type | Interactive Frontend Demonstration |
 
-## 🌟 Executive Summary
+## 🌟 Project Overview
 
-This repository contains a high-fidelity, responsive frontend reconstruction of the **On-Ground.ai Call Centre Application**. Built from ground up using **React 19**, **TypeScript** (strict mode), **Vite**, **Tabler Icons**, and **Recharts**, the application empowers call centre floor agents with agentic workflows, dynamic call queues, objective SOP compliance auditing, calendar scheduling, team collaboration via Pulse, and deterministic call simulation and practice modes.
+This project is a responsive frontend reconstruction of the On-Ground.ai Call Centre application, developed using the supplied reference mock.
 
----
+The application demonstrates how retail call centre agents can manage customer enquiries, prioritize follow-ups, inspect lead information, review call quality, coordinate with teammates, and practise structured customer conversations.
 
-## 🚀 Live Demo & Repository
+Built with React, TypeScript, and Vite, the application brings together dashboard analytics, lead management, call workflows, calendar views, and team collaboration in a unified interface.
 
-- **Public Live Demo:** [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/)
+The project uses sample data and simulated interactions to demonstrate the workflows. It is a frontend assignment implementation, not a production call centre system.
+
+## 🚀 Live Demo and Repository
+
+- **Live Demo:** [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/)
 - **GitHub Repository:** [https://github.com/Keerthisingh12/onground-call-centre](https://github.com/Keerthisingh12/onground-call-centre)
 
----
+## ✨ Features
 
-## 📦 Key Features & Screen Breakdown
+### 1. Executive Dashboard
 
-### 1. 📊 Executive Dashboard (`/` & `/dashboard`)
-- **Agent Hero & Status:** Real-time shift status ("On Queue"), shift greeting, agent persona ("Arvind Rajan · The Sleep Company").
-- **Live Performance KPIs:** OG Score™ (76, ▲13), Avg Handle Time (4m 12s, ▼8%), CSAT Today (94%), Live Queue counter (2 waiting).
-- **Interactive Progress & Earnings:** Daily leads created/called delta tracking, monthly incentive slab tracker (₹5,200 earned toward ₹6,000 target with coached move breakdown).
-- **Priority Call Queue ("Who's Waiting"):** Direct queue inspection with urgency badges (High / Medium / Low wait times) and intent summary.
-- **Weekly Activity & CSAT Charts:** Recharts bar chart showing 7-day call volume and line chart tracking CSAT trend.
-- **Agent Tasks Checklist:** Quick actions opening leads, Pulse threads, or SOP reviews.
+The dashboard presents a consolidated view of agent activity and performance.
 
-### 2. 📞 Planner (`/plan`)
-A unified tabbed calling center with three distinct perspectives:
-- **Calls to Make (`/plan/calls`):**
-  - Paginated lead queue sorted by **Attractiveness Score** descending.
-  - Expandable lead row revealing customer story, budget fit, need match, decision stage subscores, and CRM notes.
-  - Direct actions to initiate simulated call or open full modal inspection.
-- **Incoming & Missed Calls (`/plan/incoming`):**
-  - Identifies missed customer enquiries ranked by **Expected Customer Value at Stake** (e.g., ₹35,270 total value).
-  - One-click callback action with visual confirmation tracking.
-- **Recent Call Review (`/plan/recent`):**
-  - Comprehensive call log filtered by All, Outgoing, Incoming, or Missed.
-  - Direction badges, call outcome tags, and timestamp/duration details.
-  - **Interactive SOP Adherence Review:** Tap any call to inspect compliance across 6 objective criteria (Greeting, Needs Discovery, Product Pitch, EMI Financing, Warranty, Closing) complete with quoted call evidence and adherence percentages.
+- Agent profile, shift status, and greeting.
+- Performance KPI cards, including OG Score, average handle time, customer satisfaction, and queue count.
+- Lead activity and incentive progress indicators.
+- Waiting-call queue with priority and customer-intent information.
+- Weekly call-volume and customer-satisfaction charts using Recharts.
+- Task cards linking to relevant leads, collaboration threads, and call reviews.
+- Date-range selection for the reporting period.
 
-### 3. 👤 Deep Lead Inspection Modal
-- Full customer journey timeline (store visits, website visits, missed calls).
-- AI Signal breakdown: Attractiveness Score, Intent Score, ICP Match.
-- Subscore progress meters (Budget Fit, Need Match, Decision Stage).
-- Keyboard shortcuts: `ArrowLeft` / `ArrowRight` to cycle leads, `Escape` to close.
-- Direct "Call Lead" action initiating the call simulation.
+All performance metrics and charts use demonstration data rather than live production analytics.
 
-### 4. 🗓️ Dynamic Calendar & Coaching (`/calendar`)
-- **Pure JavaScript Date Engine:** Dynamic month grid with leap year calculation, weekday offsets, and navigation across months.
-- **Date Status Indicators:** Highlights today, selected day, and visual indicator dots for days with scheduled events.
-- **Schedule Tabs:** Toggle between day-specific callbacks and full upcoming session list (SOP coaching, warranty refresher, team huddles).
-- **Invite & Share Sheet:** Interactive modal to schedule callbacks and share invites with managers, L&D coaches, or the floor team.
+### 2. Planner and Call Management
 
-### 5. 💬 Pulse — Floor Collaboration & AI Knowledge (`/pulse`)
-- **Searchable Channel Directory:** Direct navigation into `#callcentre-team`, `#all-stores`, `#avani-coaching`, and `#manage-shipment`.
-- **Avani AI Copilot Card:** Interactive prompt chips for instant SOP guidance, warranty details, and EMI tables.
-- **Pinned Decision Card:** In `#callcentre-team`, agents can interactively **Confirm (4:30pm)** or **Reschedule** customer callback requests (Priya Iyer dispute), updating state and posting real-time confirmations to the thread.
-- **Message Composer:** Supports Enter to send, Shift+Enter for newline, autoscroll to latest message, and automated AI coaching responses.
-- **Kudos & Recognition Wall:** Displays floor achievements and CSAT milestones.
+The Planner organizes calling workflows into three views.
 
-### 6. 🎧 Simulated Live Call Flow (Deterministic Bonus)
-- **Pre-Call Briefing:** Lead summary, target product, expected value, financing notes, and SOP reminder checklist before dialing.
-- **Active Call Interface:** Real-time ticking call timer, voice waveform animation, and live transcript stream between Agent and Customer.
-- **AI Assist Copilot:** Real-time prompts suggesting EMI angles and objection rebuttals.
-- **Interactive Controls:** Toggle Microphone Mute, Call Hold, and End Call.
-- **Post-Call Wrap-up:** Outcome selection (Sale Closed, WhatsApp Quote Sent, Callback Scheduled, etc.), agent notes, and persistent logging to Recent Calls.
+#### Calls to Make
 
-### 7. 🎯 Practise a Call (Bonus)
-- Scripted customer scenarios (e.g. *Ortho GRID — EMI Enquiry*, *Ageing Lead Recovery*).
-- Start / pause / step timer and turn-by-turn dialogue progression.
-- Automated AI scorecard grading performance against 6 criteria with specific feedback notes.
+- Paginated lead list ordered by attractiveness score.
+- Expandable lead rows containing customer context, budget fit, need match, decision stage, and notes.
+- Actions to initiate a simulated call or inspect a lead in detail.
 
----
+#### Incoming and Missed Calls
 
-## 🛠️ Architecture & Tech Stack
+- List of missed customer enquiries.
+- Customer-value indicators based on sample data.
+- Callback actions that initiate the simulated calling workflow.
+- Visual feedback for callback interactions.
 
-```
+#### Recent Call Review
+
+- Call history with incoming, outgoing, and missed-call categories.
+- Call outcomes, timestamps, and duration information.
+- Interactive SOP adherence review for selected calls.
+- Criteria covering greeting, needs discovery, product pitch, EMI financing, warranty, and closing.
+- Adherence indicators and supporting call evidence where provided by the sample data.
+
+### 3. Lead Inspection
+
+The lead-inspection modal brings customer information together in one place.
+
+- Customer profile and journey timeline.
+- Attractiveness, intent, and ideal-customer-profile indicators.
+- Budget fit, need match, and decision-stage breakdowns.
+- Customer signals and contextual notes.
+- Previous/next lead navigation.
+- Keyboard navigation and modal dismissal where implemented.
+- Actions for available lead-management and simulated calling workflows.
+
+### 4. Calendar and Coaching
+
+The Calendar provides a navigable monthly view of scheduled demonstration events.
+
+- Month navigation and a Today action.
+- Selected-day event listings.
+- Visual indicators for scheduled events.
+- Callback and coaching-session information.
+- Invite-sharing interactions for relevant team members and collaborators.
+
+Calendar events use local demonstration data and are not synchronized with an external calendar service.
+
+### 5. Pulse — Team Collaboration
+
+Pulse demonstrates communication and coaching workflows for a call centre team.
+
+- Channel and conversation navigation.
+- Team discussion and coaching threads.
+- AvaniBot demonstration prompts for product knowledge and SOP guidance.
+- Pinned callback decision cards with confirmation and rescheduling interactions.
+- Message composer with keyboard support.
+- Sample team achievements and recognition content.
+
+Messages and coaching responses are part of the frontend demonstration. The application is not connected to a production messaging service or live AI inference backend.
+
+### 6. Simulated Call Workflow
+
+The call interface demonstrates a possible end-to-end agent workflow.
+
+- Pre-call briefing with lead context and notes.
+- Simulated call connection and active-call timer.
+- Transcript-style conversation display.
+- Demonstration prompts for product information, EMI, and objection handling.
+- Mute, hold, and end-call controls where implemented.
+- Post-call outcome selection and notes.
+- Local call-history updates after completing the workflow.
+
+The call, transcript, and assistance prompts are simulated. No real customer is contacted.
+
+### 7. Practice Call
+
+The practice workflow demonstrates structured customer-conversation training.
+
+- Scripted customer scenarios.
+- Step-by-step dialogue progression.
+- Practice timer controls.
+- Demonstration scorecard based on call-handling criteria.
+- Feedback associated with the selected scenario.
+
+The practice scorecard is a demonstration feature, not a validated production AI assessment.
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| React 19 | Component-based user interface |
+| TypeScript | Typed application development |
+| Vite | Development server and production bundling |
+| React Router | Client-side navigation |
+| Tabler Icons | Interface icons |
+| Recharts | Dashboard charts |
+| Vitest | Automated testing |
+| React Testing Library | Component and interaction testing |
+| oxlint | Code linting |
+| CSS and CSS Modules | Styling and component layouts |
+
+The exact dependency versions are maintained in `package.json` and `package-lock.json`.
+
+## 🏗️ Project Structure
+
+```text
 onground-call-centre/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
 ├── src/
 │   ├── app/
-│   │   └── AppContext.tsx        # Centralized state (active call, recent calls, modals, toasts)
-│   ├── assets/                   # Static media and logos
+│   │   └── AppContext.tsx
+│   ├── assets/
 │   ├── components/
-│   │   ├── calls/                # ActiveCallModal & in-call simulation
-│   │   ├── layout/               # TopBar, Sidebar, BottomNav
-│   │   └── leads/                # LeadsModal inspection
+│   │   ├── calls/
+│   │   ├── layout/
+│   │   └── leads/
 │   ├── data/
-│   │   ├── callsAndEvents.ts     # KPIs, queue, recent calls, SOP templates, calendar events
-│   │   ├── leads.ts              # Canonical lead database (scores, journey, notes)
-│   │   ├── practise.ts           # Scripted training scenarios & scorecards
-│   │   └── pulse.ts              # Pulse threads, pinned decision cards, DMs
+│   │   ├── callsAndEvents.ts
+│   │   ├── leads.ts
+│   │   ├── practise.ts
+│   │   └── pulse.ts
 │   ├── features/
-│   │   ├── calendar/             # Calendar month grid & invite sheet
-│   │   ├── dashboard/            # Dashboard KPIs, Recharts charts, tasks
-│   │   ├── plan/                 # Calls to Make, Incoming, Recent & SOP Review
-│   │   ├── practise/             # Practice simulator & feedback scorecard
-│   │   └── pulse/                # Pulse channels & message threads
+│   │   ├── calendar/
+│   │   ├── dashboard/
+│   │   ├── plan/
+│   │   ├── practise/
+│   │   └── pulse/
 │   ├── styles/
-│   │   └── global.css            # Design tokens, reset, typography, and responsive layout
-│   ├── test/                     # Vitest + React Testing Library test suite
+│   │   └── global.css
+│   ├── test/
 │   ├── types/
-│   │   └── index.ts              # Strict TypeScript definitions
+│   │   └── index.ts
 │   ├── utils/
-│   │   └── format.ts             # Currency (INR), dates, score colors
-│   ├── App.tsx                   # Main SPA router & global modal mounts
-│   └── main.tsx                  # React DOM root
-├── vercel.json                   # SPA rewrite fallback configuration
-├── vite.config.ts                # Vite & Vitest configuration
-└── package.json
+│   │   └── format.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.ts
+└── README.md
 ```
 
-- **Framework:** React 19 + TypeScript (Strict)
-- **Bundler:** Vite 8
-- **Routing:** React Router v7
-- **Icons:** `@tabler/icons-react`
-- **Charts:** `recharts`
-- **Linter:** `oxlint`
-- **Testing:** `vitest` + `@testing-library/react` + `@testing-library/jest-dom`
-
----
-
-## 💻 Local Development Setup
+## 💻 Local Development
 
 ### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn
 
-### Installation
+- Node.js compatible with the project's Vite and TypeScript dependencies.
+- npm.
+
+### 1. Clone the repository
+
 ```bash
-# Clone the repository
 git clone https://github.com/Keerthisingh12/onground-call-centre.git
 cd onground-call-centre
-
-# Install dependencies
-npm install
 ```
 
-### Running Locally
+### 2. Install dependencies
+
 ```bash
-# Start Vite development server
+npm ci
+```
+
+### 3. Start the development server
+
+```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173`.
 
-### Running Tests
+Open the local URL printed by Vite in your terminal, typically:
+
+`http://localhost:5173`
+
+### 4. Run automated tests
+
 ```bash
-# Run automated Vitest test suite
 npm run test
 ```
 
-### Linting & Build
-```bash
-# Run oxlint
-npm run lint
+### 5. Run linting
 
-# Compile TypeScript and generate production bundle
+```bash
+npm run lint
+```
+
+### 6. Create a production build
+
+```bash
 npm run build
 ```
 
----
+The build script runs TypeScript project checks before generating the Vite production bundle.
 
-## 🧪 Testing Coverage
+## 🧪 Testing
 
-The automated test suite verifies:
-1. **App Navigation & Shell:** Branding, TopBar OG score, desktop Sidebar, mobile BottomNav, and Dashboard rendering.
-2. **Leads Modal Workflow:** Opening leads from dashboard tasks, inspecting lead details, cycling next/previous leads, and closing.
-3. **End-to-End Call Flow Simulation:** Transition from pre-call preview -> connecting call -> active timer -> ending call -> selecting outcome wrap-up -> saving and appending to recent calls.
-4. **Calendar Navigation:** Month generation, weekday headers, and upcoming coaching events.
-5. **Pulse & Collaborative Decisioning:** Channel listing, message threads, and resolving the pinned callback decision card.
+The repository includes a Vitest and React Testing Library setup.
 
----
+The test suite is intended to cover areas such as:
 
-## 📱 Responsive Design
+- Application navigation and dashboard rendering.
+- Lead inspection and navigation.
+- Simulated calling workflows.
+- Calendar navigation and event display.
+- Pulse channels, messages, and callback interactions.
+- Component interactions covered by the available test files.
 
-- **Desktop (>= 1024px):** Fixed navigation sidebar (224px), comprehensive topbar, multi-column dashboard grid, side-by-side call simulator.
-- **Tablet / Laptop (768px - 1023px):** Fluid layout, stacked KPI cards, scrollable tables.
-- **Mobile (< 768px):** Automatic sidebar hiding, fixed native-style bottom navigation bar, touch-friendly tap targets, and full-screen modals.
+Run `npm run test` to execute the current suite. Test counts and successful build results should be reported only after verification against the submitted version.
 
----
+## 📱 Responsive Interface
+
+The application includes responsive styling intended to support desktop, tablet, and mobile layouts.
+
+Navigation, content sections, and modal layouts adapt to available screen space. Final rendering and interaction behaviour may vary by viewport and browser.
+
+## 🤖 AI Tools and Development Disclosure
+
+AI-assisted development tools were used during the development and refinement of this assignment.
+
+The application demonstrates AI-oriented workflows through scripted assistance prompts, sample coaching content, and simulated practice scenarios. These features should not be interpreted as a deployed production AI model.
+
+The project does not claim to provide live telephony, production CRM integration, external calendar synchronization, or a production backend.
 
 ## 👤 Author
 
-**Keerthi G Singh**  
-Candidate for Forward Deployed Engineer / Agentic Engineer  
-On-Ground.ai, Bengaluru
+**Keerthi G Singh**
+
+Candidate — Forward Deployed Engineer / Agentic Engineer
+
+## 📄 Assignment Note
+
+This project was developed as a frontend hiring assignment based on the reference materials supplied by On-Ground.ai. Customer records, performance indicators, call transcripts, coaching content, and workflow outcomes are demonstration data.
