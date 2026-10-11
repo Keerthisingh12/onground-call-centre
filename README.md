@@ -129,6 +129,64 @@ The practice workflow demonstrates structured customer-conversation training.
 
 The practice scorecard is a demonstration feature, not a validated production AI assessment.
 
+
+## 🎙️ Live Audio Demo — Genuine Human-to-Human Browser Call
+
+> **Assignment requirement met:** This is a real two-way WebRTC audio call between two browser participants, separate from the simulated call interface.
+
+Built on **LiveKit Cloud** (`livekit-client` v2.22.4) using the development token server.
+
+- **Public URL:** [https://keerthisingh12.github.io/onground-call-centre/live-audio](https://keerthisingh12.github.io/onground-call-centre/live-audio)
+- Navigate to **Live Audio Demo** in the sidebar (headphones icon).
+
+### Environment setup (local development only)
+
+Create `.env.local` in the project root — this file is gitignored and never committed:
+
+```
+VITE_LIVEKIT_TOKEN_SERVER_ID=<your-token-server-id>
+```
+
+Obtain the Token Server ID from your LiveKit Cloud project under **Settings → Development Token Server**.
+
+### Local HTTPS setup (required for microphone on a second device)
+
+The dev server runs HTTPS automatically via `@vitejs/plugin-basic-ssl` (active in `vite dev` only, not in the production build):
+
+```bash
+npm run dev
+# Vite prints:
+#   Local:   https://localhost:5173/
+#   Network: https://192.168.x.x:5173/
+```
+
+Accept the self-signed cert warning in your browser (**Advanced → Proceed**). This is expected for local dev — GitHub Pages provides a valid trusted cert for the public demo.
+
+### How to verify two-way audio
+
+**Option A — Two tabs, same machine (simplest):**
+1. Open `https://localhost:5173/live-audio` in Tab 1 → enter name `Alice`, join.
+2. Open the same URL in Tab 2 → enter name `Bob`, same room name, join.
+3. Speak — both participants hear each other in real time.
+
+**Option B — Two separate devices on the same Wi-Fi:**
+1. Second device opens `https://192.168.x.x:5173/live-audio` (use the Network URL Vite printed).
+2. Accept the self-signed cert warning.
+3. Same room name, different display name → Join.
+
+**Option C — Public demo (no setup required):**
+1. Open `https://keerthisingh12.github.io/onground-call-centre/live-audio` on two devices.
+2. Both devices use a trusted HTTPS cert automatically (GitHub Pages).
+3. `VITE_LIVEKIT_TOKEN_SERVER_ID` is required in `.env.local` only for local dev; the public demo reads it from the browser bundle (it is a non-secret project identifier, not an API secret).
+
+> ⚠️ The development token server is for testing only. For production, replace with a backend token endpoint.
+
+### Security notes
+
+- `VITE_LIVEKIT_TOKEN_SERVER_ID` is a non-secret project identifier — it does **not** expose your LiveKit API key or API secret.
+- Your API key and secret live in LiveKit Cloud and must never appear in frontend code.
+- `.env.local` is listed in `.gitignore` and is never committed.
+
 ## 🛠️ Technology Stack
 
 | Technology | Purpose |

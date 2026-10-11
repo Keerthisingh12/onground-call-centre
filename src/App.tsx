@@ -11,6 +11,7 @@ import Calendar from './features/calendar/Calendar';
 import Pulse from './features/pulse/Pulse';
 import PulseChannel from './features/pulse/PulseChannel';
 import Practise from './features/practise/Practise';
+import LiveAudioDemo from './features/live-audio/LiveAudioDemo';
 import './styles/global.css';
 
 function MainLayout() {
@@ -33,6 +34,7 @@ function MainLayout() {
             <Route path="/pulse" element={<Pulse />} />
             <Route path="/pulse/:channelId" element={<PulseChannel />} />
             <Route path="/practise" element={<Practise />} />
+            <Route path="/live-audio" element={<LiveAudioDemo />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
