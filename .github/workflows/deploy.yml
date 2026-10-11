@@ -30,6 +30,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Guard: fail immediately with a clear message if the required repository
+      # variable is missing, rather than publishing a broken demo silently.
+      # To add it: GitHub repo → Settings → Secrets and variables → Actions
+      # → Variables tab → New repository variable
+      # Name:  VITE_LIVEKIT_TOKEN_SERVER_ID
+      # Value: ongroundlivecalldemo-2e4l14   (public project identifier, not a secret)
+      - name: Verify required build variables
+        run: |
+          if [ -z "$VITE_LIVEKIT_TOKEN_SERVER_ID" ]; then
+            echo "❌ ERROR: VITE_LIVEKIT_TOKEN_SERVER_ID is not set."
+            echo ""
+            echo "Add it as a repository variable in:"
+            echo "  GitHub repo → Settings → Secrets and variables → Actions → Variables tab"
+            echo "  Name:  VITE_LIVEKIT_TOKEN_SERVER_ID"
+            echo "  Value: ongroundlivecalldemo-2e4l14"
+            echo ""
+            echo "This is a public project identifier, not an API secret."
+            exit 1
+          fi
+          echo "✅ VITE_LIVEKIT_TOKEN_SERVER_ID is set."
+        env:
+          VITE_LIVEKIT_TOKEN_SERVER_ID: ${{ vars.VITE_LIVEKIT_TOKEN_SERVER_ID }}
+
       - name: Run checks & tests
         run: |
           npm run lint
@@ -39,6 +62,9 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /onground-call-centre/
+          # Baked into the bundle at build time by Vite as import.meta.env.VITE_LIVEKIT_TOKEN_SERVER_ID.
+          # This is a public LiveKit project identifier — not an API key or secret.
+          VITE_LIVEKIT_TOKEN_SERVER_ID: ${{ vars.VITE_LIVEKIT_TOKEN_SERVER_ID }}
 
       - name: Copy index.html to 404.html for SPA routing
         run: cp dist/index.html dist/404.html
