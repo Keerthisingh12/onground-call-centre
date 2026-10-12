@@ -25,5 +25,14 @@ dist-ssr
 .vercel
 coverage
 .env*
-*.local
+# Allow the example file to be committed — it contains placeholder names only, no real values.
+!.env.example
 .env.local
+
+# Python
+.venv
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/

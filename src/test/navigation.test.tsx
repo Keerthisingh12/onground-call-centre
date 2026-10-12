@@ -16,6 +16,7 @@ describe('App Navigation & Layout', () => {
     expect(screen.getAllByText('Calendar').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Pulse').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Practise').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Avani AI Call').length).toBeGreaterThan(0);
   });
 
   it('displays the Dashboard hero and metrics by default', () => {

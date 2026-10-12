@@ -1,0 +1,8 @@
+project-includes = [
+  "agent/**/*.py"
+]
+search-path = [
+  "agent"
+]
+disable-search-path-heuristics = true
+python-interpreter-path = "agent/.venv/bin/python"

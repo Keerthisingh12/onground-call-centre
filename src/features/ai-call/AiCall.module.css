@@ -1,0 +1,466 @@
+/* =========================================================
+   AiCall.module.css — Styling for Avani AI Voice Call
+   ========================================================= */
+
+.page {
+  padding: 32px 28px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---- Header ---- */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary, #e2e8f0);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 13.5px;
+  color: var(--text-muted, #8a9ab5);
+  margin: 4px 0 0;
+}
+
+/* ---- Card ---- */
+.card {
+  background: var(--card-bg, #1e2a3a);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+}
+
+/* ---- Agent Intro Box ---- */
+.agentIntro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+}
+
+.agentAvatarLarge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  flex-shrink: 0;
+}
+
+.agentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.agentName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.agentRole {
+  font-size: 12.5px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.agentCapability {
+  font-size: 12px;
+  color: #8a9ab5;
+}
+
+/* ---- Form ---- */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary, #b0bed0);
+}
+
+.hint {
+  font-weight: 400;
+  color: #6b7a93;
+  font-size: 12px;
+}
+
+.input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #111827;
+  -webkit-text-fill-color: #111827;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.input:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  -webkit-text-fill-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ---- Error banner ---- */
+.errorBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #fca5a5;
+  line-height: 1.5;
+}
+
+/* ---- Action Buttons ---- */
+.startBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+}
+
+.startBtn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+}
+
+.startBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.startBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Info Panel ---- */
+.infoPanel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b0bed0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.infoList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 12.5px;
+  color: #8a9ab5;
+  line-height: 1.6;
+}
+
+/* ---- Active Call Interface ---- */
+.callCard {
+  background: var(--card-bg, #1e2a3a);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background: rgba(16, 185, 129, 0.12);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  flex-wrap: wrap;
+}
+
+.liveChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: 0.08em;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+.roomLabel {
+  font-size: 13px;
+  color: #b0bed0;
+  flex: 1;
+}
+
+.roomLabel strong {
+  color: #e2e8f0;
+}
+
+.timer {
+  font-size: 13.5px;
+  color: #10b981;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* ---- Audio blocked banner ---- */
+.audioBlockedBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #fbbf24;
+}
+
+.enableAudioBtn {
+  margin-left: auto;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.enableAudioBtn:hover {
+  background: rgba(251, 191, 36, 0.28);
+}
+
+/* ---- Visualizer / Stage ---- */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 24px;
+  gap: 20px;
+}
+
+.agentOrbWrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agentOrb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 800;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.35);
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.agentOrbSpeaking {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(16, 185, 129, 0.7);
+  animation: orbPulse 1.2s infinite ease-in-out;
+}
+
+@keyframes orbPulse {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(16, 185, 129, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(16, 185, 129, 0.85);
+  }
+}
+
+.pulseWave {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.35);
+  animation: waveExpand 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes waveExpand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.callStatusText {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.callStatusSubtext {
+  font-size: 13px;
+  color: #8a9ab5;
+}
+
+/* ---- Controls ---- */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 22px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.controlBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  min-width: 90px;
+}
+
+.controlBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.mutedBtn {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+
+.mutedBtn:hover {
+  background: rgba(239, 68, 68, 0.22);
+}
+
+.endCallBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  min-width: 90px;
+}
+
+.endCallBtn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}
