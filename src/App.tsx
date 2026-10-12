@@ -12,6 +12,7 @@ import Pulse from './features/pulse/Pulse';
 import PulseChannel from './features/pulse/PulseChannel';
 import Practise from './features/practise/Practise';
 import LiveAudioDemo from './features/live-audio/LiveAudioDemo';
+import AiCall from './features/ai-call/AiCall';
 import './styles/global.css';
 
 function MainLayout() {
@@ -35,6 +36,7 @@ function MainLayout() {
             <Route path="/pulse/:channelId" element={<PulseChannel />} />
             <Route path="/practise" element={<Practise />} />
             <Route path="/live-audio" element={<LiveAudioDemo />} />
+            <Route path="/ai-call" element={<AiCall />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

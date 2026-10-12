@@ -3,6 +3,7 @@ import {
   IconLayoutDashboard, IconPhone, IconCalendar, IconMessage2,
   IconChevronDown, IconChevronRight, IconMicrophone2,
   IconPhoneIncoming, IconPhoneOutgoing, IconClockHour4, IconHeadphones,
+  IconSparkles,
 } from '@tabler/icons-react';
 import { useState } from 'react';
 import styles from './Sidebar.module.css';
@@ -21,6 +22,7 @@ const NAV_ITEMS = [
   { path: '/calendar', icon: IconCalendar,          label: 'Calendar' },
   { path: '/pulse',    icon: IconMessage2,           label: 'Pulse' },
   { path: '/practise', icon: IconMicrophone2,        label: 'Practise' },
+  { path: '/ai-call',  icon: IconSparkles,           label: 'Avani AI Call' },
   { path: '/live-audio', icon: IconHeadphones,        label: 'Live Audio Demo' },
 ];
 

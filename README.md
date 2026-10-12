@@ -130,6 +130,46 @@ The practice workflow demonstrates structured customer-conversation training.
 The practice scorecard is a demonstration feature, not a validated production AI assessment.
 
 
+## 🤖 Avani AI Voice Assistant — Direct Gemini Realtime Calling
+
+> **Real AI Voice Agent:** Connects directly to **Avani**, On-Ground.ai's AI voice assistant for retail customers of The Sleep Company.
+> Built using **LiveKit Agents SDK** with native bidirectional audio via **Google Gemini Realtime Live API** (`gemini-2.5-flash-native-audio-preview-12-2025`).
+
+- **Route:** `/ai-call`
+- Navigate to **Avani AI Call** in the sidebar (sparkles icon).
+- Features full speech-to-speech interaction, native interruptibility, microphone muting, call duration tracking, and browser autoplay permissions management.
+- Backend token generation (`POST /api/token`) creates short-lived room-scoped tokens and automatically dispatches the `onground-assistant` agent.
+
+### Running the AI Voice Agent Locally
+
+1. **Configure credentials in `.env.local`** (in project root, strictly gitignored):
+   ```env
+   # LiveKit Server & Keys (from LiveKit Cloud Console)
+   LIVEKIT_URL=wss://your-project.livekit.cloud
+   LIVEKIT_API_KEY=API_your_livekit_key
+   LIVEKIT_API_SECRET=your_livekit_secret
+
+   # Google Gemini API Key
+   GOOGLE_API_KEY=AIzaSy...
+
+   # Frontend Token Server ID (fallback for local dev)
+   VITE_LIVEKIT_TOKEN_SERVER_ID=your-token-server-id
+   ```
+
+2. **Start the Python Agent Worker:**
+   ```bash
+   agent/.venv/bin/python agent/main.py dev
+   ```
+   *The worker registers the agent named `onground-assistant` and waits for room connections.*
+
+3. **Start the Frontend Application:**
+   ```bash
+   npm run dev
+   ```
+   Open `https://localhost:5173/ai-call`, enter your display name, and click **Start Voice Call with Avani**. Speak to Avani and hear her speak back.
+
+---
+
 ## 🎙️ Live Audio Demo — Genuine Human-to-Human Browser Call
 
 > **Assignment requirement met:** This is a real two-way WebRTC audio call between two browser participants, separate from the simulated call interface.

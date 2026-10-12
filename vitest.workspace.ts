@@ -5,9 +5,9 @@
 // API tests live in api/__tests__/ (adjacent to api/ handlers) so that
 // relative imports like `../health` resolve correctly without Vite's
 // src-rooted module resolver.
-import { defineWorkspace } from 'vitest/config';
+import type { TestProjectConfiguration } from 'vitest/config';
 
-export default defineWorkspace([
+export default [
   // ── Frontend / component tests (jsdom) ───────────────────────────────────
   {
     extends: './vite.config.ts',
@@ -36,4 +36,4 @@ export default defineWorkspace([
       // No setupFiles — no `window` references needed in node environment
     },
   },
-]);
+] satisfies TestProjectConfiguration[];

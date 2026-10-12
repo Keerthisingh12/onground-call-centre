@@ -1,0 +1,17 @@
+# agent/requirements.txt
+# Python >= 3.10 required (livekit-agents constraint)
+#
+# Install: pip install -r requirements.txt
+# Dev:     python main.py dev   (connects to LiveKit Cloud, waits for dispatch)
+# Prod:    lk agent start --agent-name onground-assistant
+
+# LiveKit Agents SDK — core + plugins
+livekit-agents~=1.0
+livekit-plugins-google~=1.8
+livekit-plugins-silero~=1.8
+
+# Load .env.local in development without requiring a shell export step
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=8.0.0

@@ -17,9 +17,27 @@ vi.mock('livekit-server-sdk', () => {
   class AccessToken {
     addGrant = vi.fn();
     toJwt = vi.fn().mockResolvedValue('mock-jwt-token');
-    constructor(_key: string, _secret: string, _opts: unknown) {}
+    roomConfig: unknown = undefined;
+    constructor(_key: string, _secret: string, _opts: unknown) {
+      AccessToken.lastInstance = this;
+    }
+    static lastInstance: AccessToken | null = null;
   }
-  return { AccessToken };
+  class RoomConfiguration {
+    name?: string;
+    agents?: unknown[];
+    constructor(opts: { name?: string; agents?: unknown[] } = {}) {
+      this.name = opts.name;
+      this.agents = opts.agents;
+    }
+  }
+  class RoomAgentDispatch {
+    agentName?: string;
+    constructor(opts: { agentName?: string } = {}) {
+      this.agentName = opts.agentName;
+    }
+  }
+  return { AccessToken, RoomConfiguration, RoomAgentDispatch };
 });
 
 // ---------------------------------------------------------------------------
@@ -176,13 +194,18 @@ describe('POST /api/token – successful token generation (mocked)', () => {
     expect(typeof body().identity).toBe('string');
   });
 
-  it('generates a fresh room name prefixed "ai-" for mode=ai (ignores room input)', async () => {
+  it('generates a fresh room name prefixed "ai-" and configures onground-assistant dispatch for mode=ai', async () => {
     const handler = await getHandler();
     const req = makeReq('POST', { mode: 'ai', displayName: 'Agent', room: 'some-room' });
     const { res, statusCode, body } = makeRes();
     await handler(req as VercelRequest, res as VercelResponse);
     expect(statusCode()).toBe(200);
     expect((body().room as string).startsWith('ai-')).toBe(true);
+
+    const sdk = await import('livekit-server-sdk');
+    const lastInstance = (sdk.AccessToken as unknown as { lastInstance: { roomConfig: any } }).lastInstance;
+    expect(lastInstance.roomConfig).toBeDefined();
+    expect(lastInstance.roomConfig.agents[0].agentName).toBe('onground-assistant');
   });
 
   it('generates a fresh room name prefixed "phone-" for mode=phone', async () => {

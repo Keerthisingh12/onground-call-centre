@@ -25,7 +25,7 @@
  */
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { z } from 'zod';
-import { AccessToken } from 'livekit-server-sdk';
+import { AccessToken, RoomConfiguration, RoomAgentDispatch } from 'livekit-server-sdk';
 import { applyCors } from './_lib/cors';
 import { getLiveKitConfig, generateRoomName, generateIdentity } from './_lib/livekit';
 
@@ -115,6 +115,19 @@ export default async function handler(
     //   roomAdmin, roomCreate, roomList,
     //   ingressAdmin, sipAdmin, hidden
   });
+
+  // For AI mode: configure automatic agent dispatch to 'onground-assistant'
+  // when the participant connects to create the room.
+  if (mode === 'ai') {
+    at.roomConfig = new RoomConfiguration({
+      name: room,
+      agents: [
+        new RoomAgentDispatch({
+          agentName: 'onground-assistant',
+        }),
+      ],
+    });
+  }
 
   let token: string;
   try {
