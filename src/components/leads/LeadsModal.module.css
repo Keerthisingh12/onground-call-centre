@@ -64,12 +64,12 @@
 .leadName {
   font-size: 16px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .leadSub {
   font-size: 12.5px;
-  color: #8e8e93;
+  color: #404040;
   margin-top: 1px;
 }
 
@@ -83,12 +83,12 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #e5e5ea;
+  border: 1px solid #d1d5db;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: #111111;
   transition: all 0.15s;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .navBtn:disabled {
-  opacity: 0.35;
+  opacity: 0.55;
   cursor: not-allowed;
 }
 
@@ -110,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: #111111;
   margin-left: 4px;
   transition: background 0.15s;
 }
@@ -152,7 +152,7 @@
 .interest {
   font-size: 14px;
   font-weight: 600;
-  color: #3a3a42;
+  color: #111111;
 }
 
 .slaNote {
@@ -187,7 +187,7 @@
 .scoreLabel {
   font-size: 11px;
   font-weight: 700;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   margin-top: 2px;
@@ -209,7 +209,7 @@
 .subScoreLabel {
   font-size: 12.5px;
   font-weight: 600;
-  color: #555;
+  color: #111111;
   width: 110px;
   flex-shrink: 0;
 }
@@ -252,7 +252,7 @@
 .infoBoxLabel {
   font-size: 11px;
   font-weight: 800;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
@@ -260,7 +260,7 @@
 .infoBoxVal {
   font-size: 13px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111111;
   margin-top: 3px;
 }
 
@@ -298,7 +298,7 @@
   padding: 9px 12px;
   font-size: 13.5px;
   font-weight: 700;
-  color: #3a3a42;
+  color: #111111;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -331,7 +331,7 @@
 
 .signalText {
   font-size: 13px;
-  color: #3a3a42;
+  color: #111111;
   line-height: 1.45;
 }
 
@@ -339,7 +339,7 @@
 .sectionHead {
   font-size: 12.5px;
   font-weight: 800;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-top: 4px;
@@ -373,12 +373,12 @@
 .journeyDate {
   font-size: 12.5px;
   font-weight: 700;
-  color: #6b6b74;
+  color: #404040;
 }
 
 .journeyText {
   font-size: 13.5px;
-  color: #3a3a42;
+  color: #111111;
   line-height: 1.45;
   margin-top: 1px;
 }
@@ -393,7 +393,7 @@
 
 .noteItem {
   font-size: 13.5px;
-  color: #3a3a42;
+  color: #111111;
   line-height: 1.45;
 }
 
@@ -423,6 +423,7 @@
 @media (max-width: 480px) {
   .panel {
     max-height: 94vh;
+    max-height: 94dvh;
     border-radius: 16px 16px 0 0;
     position: fixed;
     bottom: 0;

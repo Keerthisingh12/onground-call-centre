@@ -23,7 +23,7 @@
 .backBtn {
   background: transparent;
   border: none;
-  color: #6b6b74;
+  color: #404040;
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
@@ -33,7 +33,7 @@
 
 .backBtn:hover {
   background: #e5e5ea;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .headerInfo {
@@ -43,12 +43,12 @@
 .title {
   font-size: 16px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .dateLabel {
   font-size: 12px;
-  color: #8e8e93;
+  color: #404040;
 }
 
 /* Pinned Card */
@@ -81,7 +81,7 @@
 
 .pinnedFrom {
   font-size: 11.5px;
-  color: #92400e;
+  color: #78350f;
 }
 
 .pinnedTitle {
@@ -93,7 +93,7 @@
 
 .pinnedBody {
   font-size: 12.5px;
-  color: #92400e;
+  color: #78350f;
   line-height: 1.4;
   margin-bottom: 10px;
 }
@@ -199,11 +199,11 @@
 
 .senderName {
   font-weight: 700;
-  color: #4b5563;
+  color: #111111;
 }
 
 .timestamp {
-  color: #9ca3af;
+  color: #525252;
 }
 
 .bubble {
@@ -215,7 +215,7 @@
 
 .bubbleOther {
   background: #f4f4f7;
-  color: #1a1a1a;
+  color: #111111;
   border-top-left-radius: 2px;
 }
 
@@ -242,6 +242,7 @@
   padding: 9px 16px;
   font-size: 13.5px;
   font-family: inherit;
+  color: #111111;
   resize: none;
 }
 
@@ -268,4 +269,11 @@
 .sendBtn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: calc(100dvh - var(--topbar-height, 54px) - var(--bottom-nav-height, 64px) - env(safe-area-inset-bottom, 0px) - 24px);
+    border-radius: 12px;
+  }
 }

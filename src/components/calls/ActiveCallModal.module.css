@@ -51,7 +51,7 @@
 .closeBtn {
   background: none;
   border: none;
-  color: #8e8e93;
+  color: #404040;
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
@@ -59,19 +59,19 @@
 
 .closeBtn:hover {
   background: #f2f2f7;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .leadTitle {
   font-size: 22px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
   margin: 0;
 }
 
 .leadSub {
   font-size: 14px;
-  color: #6b6b74;
+  color: #404040;
   margin-top: -8px;
 }
 
@@ -92,12 +92,12 @@
 }
 
 .preLabel {
-  color: #6b6b74;
+  color: #404040;
 }
 
 .preVal {
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .preNotes {
@@ -105,7 +105,7 @@
   padding-top: 8px;
   border-top: 1px dashed #d1cbbd;
   font-size: 12.5px;
-  color: #4b5563;
+  color: #404040;
 }
 
 .sopReminder {
@@ -143,12 +143,12 @@
 
 .cancelBtn {
   background: #f3f4f6;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #d1d5db;
   padding: 10px 18px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #4b5563;
+  color: #111111;
   cursor: pointer;
 }
 
@@ -283,7 +283,7 @@
 .sectionHeading {
   font-size: 12px;
   font-weight: 700;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
@@ -316,7 +316,7 @@
 
 .bubbleCustomer {
   background: #ffffff;
-  color: #374151;
+  color: #111111;
   border: 1px solid #e5e7eb;
   align-self: flex-start;
   max-width: 90%;
@@ -332,7 +332,7 @@
 .speakingIndicator {
   font-size: 11px;
   font-style: italic;
-  color: #9ca3af;
+  color: #525252;
   padding: 4px;
 }
 
@@ -378,7 +378,7 @@
 .sopCardTitle {
   font-size: 12px;
   font-weight: 700;
-  color: #6b6b74;
+  color: #404040;
   margin-bottom: 8px;
 }
 
@@ -419,7 +419,7 @@
 
 .sopItemText {
   font-size: 12px;
-  color: #4b5563;
+  color: #111111;
 }
 
 .sopPassed .sopItemText {
@@ -442,12 +442,12 @@
   align-items: center;
   gap: 6px;
   background: #ffffff;
-  border: 1px solid #e4e4e7;
+  border: 1px solid #d1d5db;
   padding: 8px 16px;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 600;
-  color: #3f3f46;
+  color: #111111;
   cursor: pointer;
 }
 
@@ -497,13 +497,13 @@
 .wrapupTitle {
   font-size: 20px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
   margin: 0;
 }
 
 .wrapupMeta {
   font-size: 13.5px;
-  color: #8e8e93;
+  color: #404040;
   margin-top: 4px;
 }
 
@@ -516,7 +516,7 @@
 .wrapLabel {
   font-size: 12px;
   font-weight: 700;
-  color: #6b6b74;
+  color: #111111;
   text-transform: uppercase;
 }
 
@@ -528,12 +528,12 @@
 
 .outcomePill {
   background: #f4f4f5;
-  border: 1px solid #e4e4e7;
+  border: 1px solid #d1d5db;
   border-radius: 20px;
   padding: 7px 14px;
   font-size: 12.5px;
   font-weight: 600;
-  color: #4b5563;
+  color: #111111;
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -552,11 +552,12 @@
 
 .notesTextarea {
   width: 100%;
-  border: 1px solid #e4e4e7;
+  border: 1px solid #d1d5db;
   border-radius: 10px;
   padding: 10px 12px;
   font-size: 13px;
   font-family: inherit;
+  color: #111111;
   resize: vertical;
 }
 
@@ -587,4 +588,20 @@
 
 .saveCallBtn:hover {
   background: #0c5643;
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 8px;
+  }
+
+  .modalCard {
+    max-height: 94vh;
+    max-height: 94dvh;
+    border-radius: 14px;
+  }
+
+  .preCall {
+    padding: 16px 12px;
+  }
 }

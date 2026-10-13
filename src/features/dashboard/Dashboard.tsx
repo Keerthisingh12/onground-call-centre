@@ -195,10 +195,10 @@ export default function Dashboard() {
           <div className={styles.chartTitle}>Calls this week</div>
           <ResponsiveContainer width="100%" height={140}>
             <BarChart data={WEEKLY_CALLS_DATA} barSize={22} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
-              <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#8e8e93' }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 10, fill: '#8e8e93' }} axisLine={false} tickLine={false} />
+              <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#404040' }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 10, fill: '#404040' }} axisLine={false} tickLine={false} />
               <Tooltip
-                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', padding: '4px 10px' }}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', padding: '4px 10px', color: '#111111' }}
                 cursor={{ fill: 'rgba(29,158,117,0.08)' }}
               />
               <Bar dataKey="calls" fill="#1d9e75" radius={[4, 4, 0, 0]} />
@@ -211,10 +211,10 @@ export default function Dashboard() {
           <ResponsiveContainer width="100%" height={140}>
             <LineChart data={CSAT_TREND_DATA} margin={{ top: 8, right: 4, bottom: 0, left: -20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f4" vertical={false} />
-              <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#8e8e93' }} axisLine={false} tickLine={false} />
-              <YAxis domain={[80, 100]} tick={{ fontSize: 10, fill: '#8e8e93' }} axisLine={false} tickLine={false} />
+              <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#404040' }} axisLine={false} tickLine={false} />
+              <YAxis domain={[80, 100]} tick={{ fontSize: 10, fill: '#404040' }} axisLine={false} tickLine={false} />
               <Tooltip
-                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', padding: '4px 10px' }}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e5e5ea', padding: '4px 10px', color: '#111111' }}
               />
               <Line
                 type="monotone"
