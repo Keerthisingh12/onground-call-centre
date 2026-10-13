@@ -26,13 +26,13 @@
 .title {
   font-size: 20px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
   margin: 0;
 }
 
 .subtitle {
   font-size: 13px;
-  color: #8e8e93;
+  color: #404040;
   margin-top: 2px;
 }
 
@@ -72,12 +72,12 @@
 .tabTitle {
   font-size: 14px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .tabProduct {
   font-size: 12px;
-  color: #8e8e93;
+  color: #404040;
   margin-top: 2px;
 }
 
@@ -104,7 +104,7 @@
   align-items: center;
   gap: 6px;
   font-size: 13.5px;
-  color: #374151;
+  color: #111111;
 }
 
 .productTag {
@@ -118,7 +118,7 @@
 
 .description {
   font-size: 13px;
-  color: #6b6b74;
+  color: #404040;
   line-height: 1.45;
   margin: 0;
 }
@@ -253,7 +253,7 @@
 
 .bubbleCustomer {
   background: #ffffff;
-  color: #1a1a1a;
+  color: #111111;
   border: 1px solid #e5e5ea;
   border-top-left-radius: 2px;
 }
@@ -272,7 +272,7 @@
 
 .typingIndicator {
   font-size: 11.5px;
-  color: #8e8e93;
+  color: #404040;
   font-style: italic;
   padding: 4px;
 }
@@ -316,7 +316,7 @@
   gap: 8px;
   font-size: 16px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .sparkleIcon {
@@ -394,7 +394,7 @@
 .feedbackLabel {
   font-size: 13.5px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .badgePassed {
@@ -419,7 +419,7 @@
   margin-top: 4px;
   margin-left: 28px;
   font-size: 12px;
-  color: #6b6b74;
+  color: #404040;
 }
 
 .scorecardFooter {

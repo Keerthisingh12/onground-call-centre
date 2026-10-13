@@ -136,7 +136,7 @@ export const DIRECT_MESSAGES: DirectMessage[] = [
     name: 'Priya Iyer',
     initials: 'PI',
     bg: '#f2f2f7',
-    color: '#6b6b74',
+    color: '#404040',
     status: 'away',
     preview: 'Can you confirm the callback at 4:30?',
     time: 'Yesterday',

@@ -1,11 +1,28 @@
-import { IconBell, IconStar } from '@tabler/icons-react';
+import { IconBell, IconStar, IconMenu2, IconX } from '@tabler/icons-react';
 import { getGreeting } from '../../utils/format';
 import styles from './TopBar.module.css';
 
-export default function TopBar() {
+interface TopBarProps {
+  menuOpen?: boolean;
+  onMenuToggle?: () => void;
+}
+
+export default function TopBar({ menuOpen = false, onMenuToggle }: TopBarProps) {
   return (
     <header className={styles.topbar} role="banner">
       <div className={styles.left}>
+        {/* Mobile menu toggle */}
+        <button
+          type="button"
+          className={styles.menuToggle}
+          onClick={onMenuToggle}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="main-sidebar"
+        >
+          {menuOpen ? <IconX size={22} /> : <IconMenu2 size={22} />}
+        </button>
+
         {/* Mobile logo */}
         <div className={styles.mobileLogo}>
           <div className={styles.mobileMark}>OG</div>
@@ -29,7 +46,7 @@ export default function TopBar() {
         </div>
 
         {/* Notification bell */}
-        <button className={styles.notifBtn} aria-label="Notifications">
+        <button type="button" className={styles.notifBtn} aria-label="Notifications">
           <IconBell size={17} />
           <span className={styles.notifDot} />
         </button>

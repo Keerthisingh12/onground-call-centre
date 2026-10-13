@@ -110,25 +110,37 @@ export default function AiCall() {
   }, []);
 
   async function fetchTokenCredentials(displayName: string): Promise<{ url: string; token: string; room: string }> {
-    // 1. If backend API base URL is defined or relative /api/token is available
-    try {
-      const endpoint = API_BASE_URL ? `${API_BASE_URL}/api/token` : '/api/token';
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode: 'ai', displayName }),
-      });
+    const isDevOrTest = import.meta.env.DEV || import.meta.env.MODE === 'test';
+    const endpoint = API_BASE_URL ? `${API_BASE_URL}/api/token` : (isDevOrTest ? '/api/token' : '');
 
-      if (res.ok) {
-        const data = (await res.json()) as TokenResponse;
-        return { url: data.url, token: data.token, room: data.room };
+    // 1. If backend API base URL is defined or relative /api/token is available in dev/test
+    if (endpoint) {
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mode: 'ai', displayName }),
+        });
+
+        if (res.ok) {
+          const data = (await res.json()) as TokenResponse;
+          return { url: data.url, token: data.token, room: data.room };
+        }
+
+        const errData = (await res.json().catch(() => ({}))) as { error?: string };
+        const msg = errData.error || `LiveKit token endpoint returned status ${res.status}`;
+        if (!isDevOrTest) {
+          throw new Error(msg);
+        }
+      } catch (err) {
+        if (!isDevOrTest) {
+          throw err;
+        }
       }
-    } catch {
-      // Fallback below if serverless endpoint is not running locally
     }
 
-    // 2. Fallback to development token server if VITE_LIVEKIT_TOKEN_SERVER_ID is provided
-    if (TOKEN_SERVER_ID) {
+    // 2. Fallback to development token server in local development or test mode only
+    if (isDevOrTest && TOKEN_SERVER_ID) {
       const generatedRoom = `ai-${Math.random().toString(36).slice(2, 10)}`;
       const tokenSource = TokenSource.developmentTokenServer(TOKEN_SERVER_ID);
       const { serverUrl, participantToken } = await tokenSource.fetch({
@@ -140,7 +152,7 @@ export default function AiCall() {
     }
 
     throw new Error(
-      'LiveKit credentials unavailable. Set VITE_API_BASE_URL (or VITE_LIVEKIT_TOKEN_SERVER_ID) in .env.local.',
+      'LiveKit backend token server is not configured. Set VITE_API_BASE_URL in your deployment configuration.',
     );
   }
 

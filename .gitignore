@@ -31,8 +31,10 @@ coverage
 
 # Python
 .venv
+agent/.venv
 venv/
 __pycache__/
 *.py[cod]
 *$py.class
 .pytest_cache/
+*.bak

@@ -45,7 +45,7 @@
 .greeting {
   font-size: 14.5px;
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: #ffffff;
 }
 
 .right {
@@ -74,7 +74,7 @@
 .scoreLabel {
   font-size: 11.5px;
   font-weight: 600;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.85);
 }
 
 .rankPill {
@@ -138,13 +138,37 @@
 .agentInitials {
   font-size: 9px;
   font-weight: 700;
-  color: rgba(255,255,255,0.7);
+  color: #ffffff;
   line-height: 1;
+}
+
+.menuToggle {
+  display: none;
 }
 
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 14px;
+  }
+
+  .menuToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+
+  .menuToggle:hover {
+    background: rgba(255, 255, 255, 0.16);
   }
 
   .mobileLogo {
@@ -156,6 +180,25 @@
   }
 
   .scorePill {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .topbar {
+    padding: 8px 8px;
+    gap: 6px;
+  }
+
+  .left {
+    gap: 6px;
+  }
+
+  .mobileText {
+    font-size: 14px;
+  }
+
+  .rankPill {
     display: none;
   }
 }

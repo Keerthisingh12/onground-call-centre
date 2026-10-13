@@ -3,10 +3,15 @@ import {
   IconLayoutDashboard, IconPhone, IconCalendar, IconMessage2,
   IconChevronDown, IconChevronRight, IconMicrophone2,
   IconPhoneIncoming, IconPhoneOutgoing, IconClockHour4, IconHeadphones,
-  IconSparkles,
+  IconSparkles, IconX,
 } from '@tabler/icons-react';
 import { useState } from 'react';
 import styles from './Sidebar.module.css';
+
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
 
 const NAV_ITEMS = [
   { path: '/',         icon: IconLayoutDashboard, label: 'Dashboard' },
@@ -26,77 +31,105 @@ const NAV_ITEMS = [
   { path: '/live-audio', icon: IconHeadphones,        label: 'Live Audio Demo' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   const location = useLocation();
   const isPlanActive = location.pathname.startsWith('/plan');
   const [planOpen, setPlanOpen] = useState(isPlanActive);
 
+  const handleLinkClick = () => {
+    onClose?.();
+  };
+
   return (
-    <nav className={styles.sidebar} aria-label="Main navigation">
-      <div className={styles.logo}>
-        <div className={styles.logoMark}>OG</div>
-        <span className={styles.logoText}>On-Ground.ai</span>
-      </div>
+    <>
+      {/* Mobile backdrop */}
+      <div
+        className={`${styles.backdrop} ${isOpen ? styles.backdropVisible : ''}`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
 
-      <div className={styles.nav}>
-        {NAV_ITEMS.map((item) => {
-          if (item.children) {
-            return (
-              <div key={item.label}>
-                <button
-                  className={`${styles.navItem} ${isPlanActive ? styles.active : ''}`}
-                  onClick={() => setPlanOpen((o) => !o)}
-                  aria-expanded={planOpen}
-                >
-                  <span className={styles.navIcon}><item.icon size={18} /></span>
-                  <span className={styles.navLabel}>{item.label}</span>
-                  <span className={styles.chevron}>
-                    {planOpen ? <IconChevronDown size={14} /> : <IconChevronRight size={14} />}
-                  </span>
-                </button>
-                {planOpen && (
-                  <div className={styles.subNav}>
-                    {item.children.map((child) => (
-                      <NavLink
-                        key={child.path}
-                        to={child.path}
-                        className={({ isActive }) =>
-                          `${styles.subItem} ${isActive ? styles.subActive : ''}`
-                        }
-                      >
-                        <span className={styles.subIcon}><child.icon size={15} /></span>
-                        {child.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          }
-          return (
-            <NavLink
-              key={item.path}
-              to={item.path!}
-              end={item.path === '/'}
-              className={({ isActive }) =>
-                `${styles.navItem} ${isActive ? styles.active : ''}`
-              }
-            >
-              <span className={styles.navIcon}><item.icon size={18} /></span>
-              <span className={styles.navLabel}>{item.label}</span>
-            </NavLink>
-          );
-        })}
-      </div>
-
-      <div className={styles.agentCard}>
-        <div className={styles.agentAvatar}>AR</div>
-        <div className={styles.agentInfo}>
-          <div className={styles.agentName}>Arvind Rajan</div>
-          <div className={styles.agentSub}>The Sleep Company</div>
+      <nav
+        id="main-sidebar"
+        className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}
+        aria-label="Main navigation"
+      >
+        <div className={styles.logo}>
+          <div className={styles.logoMark}>OG</div>
+          <span className={styles.logoText}>On-Ground.ai</span>
+          <button
+            type="button"
+            className={styles.closeDrawerBtn}
+            onClick={onClose}
+            aria-label="Close sidebar"
+          >
+            <IconX size={20} />
+          </button>
         </div>
-        <span className={styles.onlineIndicator} aria-label="Online" />
-      </div>
-    </nav>
+
+        <div className={styles.nav}>
+          {NAV_ITEMS.map((item) => {
+            if (item.children) {
+              return (
+                <div key={item.label}>
+                  <button
+                    type="button"
+                    className={`${styles.navItem} ${isPlanActive ? styles.active : ''}`}
+                    onClick={() => setPlanOpen((o) => !o)}
+                    aria-expanded={planOpen}
+                  >
+                    <span className={styles.navIcon}><item.icon size={18} /></span>
+                    <span className={styles.navLabel}>{item.label}</span>
+                    <span className={styles.chevron}>
+                      {planOpen ? <IconChevronDown size={14} /> : <IconChevronRight size={14} />}
+                    </span>
+                  </button>
+                  {planOpen && (
+                    <div className={styles.subNav}>
+                      {item.children.map((child) => (
+                        <NavLink
+                          key={child.path}
+                          to={child.path}
+                          onClick={handleLinkClick}
+                          className={({ isActive }) =>
+                            `${styles.subItem} ${isActive ? styles.subActive : ''}`
+                          }
+                        >
+                          <span className={styles.subIcon}><child.icon size={15} /></span>
+                          {child.label}
+                        </NavLink>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            return (
+              <NavLink
+                key={item.path}
+                to={item.path!}
+                end={item.path === '/'}
+                onClick={handleLinkClick}
+                className={({ isActive }) =>
+                  `${styles.navItem} ${isActive ? styles.active : ''}`
+                }
+              >
+                <span className={styles.navIcon}><item.icon size={18} /></span>
+                <span className={styles.navLabel}>{item.label}</span>
+              </NavLink>
+            );
+          })}
+        </div>
+
+        <div className={styles.agentCard}>
+          <div className={styles.agentAvatar}>AR</div>
+          <div className={styles.agentInfo}>
+            <div className={styles.agentName}>Arvind Rajan</div>
+            <div className={styles.agentSub}>The Sleep Company</div>
+          </div>
+          <span className={styles.onlineIndicator} aria-label="Online" />
+        </div>
+      </nav>
+    </>
   );
 }

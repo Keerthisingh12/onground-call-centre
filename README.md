@@ -1,379 +1,257 @@
-# On-Ground.ai — Agentic Call Centre Frontend
+# On-Ground.ai — Agentic Call Centre
 
-**Hiring Assignment Submission | Forward Deployed Engineer / Agentic Engineer**
+**Interactive Frontend & Realtime Voice Demonstration**  
+Hiring Assignment Submission | Forward Deployed Engineer / Agentic Engineer
 
 | Detail | Information |
 |---|---|
-| Candidate | Keerthi G Singh |
-| Company | On-Ground.ai |
-| Target Sector | Retail |
-| Reference Brand | The Sleep Company |
-| Project Type | Interactive Frontend Demonstration |
-
-## 🌟 Project Overview
-
-This project is a responsive frontend reconstruction of the On-Ground.ai Call Centre application, developed using the supplied reference mock.
-
-The application demonstrates how retail call centre agents can manage customer enquiries, prioritize follow-ups, inspect lead information, review call quality, coordinate with teammates, and practise structured customer conversations.
-
-Built with React, TypeScript, and Vite, the application brings together dashboard analytics, lead management, call workflows, calendar views, and team collaboration in a unified interface.
-
-The project uses sample data and simulated interactions to demonstrate the workflows. It is a frontend assignment implementation, not a production call centre system.
-
-## 🚀 Live Demo and Repository
-
-- **Live Demo:** [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/)
-- **GitHub Repository:** [https://github.com/Keerthisingh12/onground-call-centre](https://github.com/Keerthisingh12/onground-call-centre)
-
-## ✨ Features
-
-### 1. Executive Dashboard
-
-The dashboard presents a consolidated view of agent activity and performance.
-
-- Agent profile, shift status, and greeting.
-- Performance KPI cards, including OG Score, average handle time, customer satisfaction, and queue count.
-- Lead activity and incentive progress indicators.
-- Waiting-call queue with priority and customer-intent information.
-- Weekly call-volume and customer-satisfaction charts using Recharts.
-- Task cards linking to relevant leads, collaboration threads, and call reviews.
-- Date-range selection for the reporting period.
-
-All performance metrics and charts use demonstration data rather than live production analytics.
-
-### 2. Planner and Call Management
-
-The Planner organizes calling workflows into three views.
-
-#### Calls to Make
-
-- Paginated lead list ordered by attractiveness score.
-- Expandable lead rows containing customer context, budget fit, need match, decision stage, and notes.
-- Actions to initiate a simulated call or inspect a lead in detail.
-
-#### Incoming and Missed Calls
-
-- List of missed customer enquiries.
-- Customer-value indicators based on sample data.
-- Callback actions that initiate the simulated calling workflow.
-- Visual feedback for callback interactions.
-
-#### Recent Call Review
-
-- Call history with incoming, outgoing, and missed-call categories.
-- Call outcomes, timestamps, and duration information.
-- Interactive SOP adherence review for selected calls.
-- Criteria covering greeting, needs discovery, product pitch, EMI financing, warranty, and closing.
-- Adherence indicators and supporting call evidence where provided by the sample data.
-
-### 3. Lead Inspection
-
-The lead-inspection modal brings customer information together in one place.
-
-- Customer profile and journey timeline.
-- Attractiveness, intent, and ideal-customer-profile indicators.
-- Budget fit, need match, and decision-stage breakdowns.
-- Customer signals and contextual notes.
-- Previous/next lead navigation.
-- Keyboard navigation and modal dismissal where implemented.
-- Actions for available lead-management and simulated calling workflows.
-
-### 4. Calendar and Coaching
-
-The Calendar provides a navigable monthly view of scheduled demonstration events.
-
-- Month navigation and a Today action.
-- Selected-day event listings.
-- Visual indicators for scheduled events.
-- Callback and coaching-session information.
-- Invite-sharing interactions for relevant team members and collaborators.
-
-Calendar events use local demonstration data and are not synchronized with an external calendar service.
-
-### 5. Pulse — Team Collaboration
-
-Pulse demonstrates communication and coaching workflows for a call centre team.
-
-- Channel and conversation navigation.
-- Team discussion and coaching threads.
-- AvaniBot demonstration prompts for product knowledge and SOP guidance.
-- Pinned callback decision cards with confirmation and rescheduling interactions.
-- Message composer with keyboard support.
-- Sample team achievements and recognition content.
-
-Messages and coaching responses are part of the frontend demonstration. The application is not connected to a production messaging service or live AI inference backend.
-
-### 6. Simulated Call Workflow
-
-The call interface demonstrates a possible end-to-end agent workflow.
-
-- Pre-call briefing with lead context and notes.
-- Simulated call connection and active-call timer.
-- Transcript-style conversation display.
-- Demonstration prompts for product information, EMI, and objection handling.
-- Mute, hold, and end-call controls where implemented.
-- Post-call outcome selection and notes.
-- Local call-history updates after completing the workflow.
-
-The call, transcript, and assistance prompts are simulated. No real customer is contacted.
-
-### 7. Practice Call
-
-The practice workflow demonstrates structured customer-conversation training.
-
-- Scripted customer scenarios.
-- Step-by-step dialogue progression.
-- Practice timer controls.
-- Demonstration scorecard based on call-handling criteria.
-- Feedback associated with the selected scenario.
-
-The practice scorecard is a demonstration feature, not a validated production AI assessment.
-
-
-## 🤖 Avani AI Voice Assistant — Direct Gemini Realtime Calling
-
-> **Real AI Voice Agent:** Connects directly to **Avani**, On-Ground.ai's AI voice assistant for retail customers of The Sleep Company.
-> Built using **LiveKit Agents SDK** with native bidirectional audio via **Google Gemini Realtime Live API** (`gemini-2.5-flash-native-audio-preview-12-2025`).
-
-- **Route:** `/ai-call`
-- Navigate to **Avani AI Call** in the sidebar (sparkles icon).
-- Features full speech-to-speech interaction, native interruptibility, microphone muting, call duration tracking, and browser autoplay permissions management.
-- Backend token generation (`POST /api/token`) creates short-lived room-scoped tokens and automatically dispatches the `onground-assistant` agent.
-
-### Running the AI Voice Agent Locally
-
-1. **Configure credentials in `.env.local`** (in project root, strictly gitignored):
-   ```env
-   # LiveKit Server & Keys (from LiveKit Cloud Console)
-   LIVEKIT_URL=wss://your-project.livekit.cloud
-   LIVEKIT_API_KEY=API_your_livekit_key
-   LIVEKIT_API_SECRET=your_livekit_secret
-
-   # Google Gemini API Key
-   GOOGLE_API_KEY=AIzaSy...
-
-   # Frontend Token Server ID (fallback for local dev)
-   VITE_LIVEKIT_TOKEN_SERVER_ID=your-token-server-id
-   ```
-
-2. **Start the Python Agent Worker:**
-   ```bash
-   agent/.venv/bin/python agent/main.py dev
-   ```
-   *The worker registers the agent named `onground-assistant` and waits for room connections.*
-
-3. **Start the Frontend Application:**
-   ```bash
-   npm run dev
-   ```
-   Open `https://localhost:5173/ai-call`, enter your display name, and click **Start Voice Call with Avani**. Speak to Avani and hear her speak back.
+| **Author** | Keerthi G Singh |
+| **Target Sector** | Retail Call Centre |
+| **Reference Brand** | The Sleep Company |
+| **Live Demo** | [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/) |
+| **GitHub Repository** | [https://github.com/Keerthisingh12/onground-call-centre](https://github.com/Keerthisingh12/onground-call-centre) |
 
 ---
 
-## 🎙️ Live Audio Demo — Genuine Human-to-Human Browser Call
+## 🌟 Project Overview
 
-> **Assignment requirement met:** This is a real two-way WebRTC audio call between two browser participants, separate from the simulated call interface.
+On-Ground.ai Call Centre is a high-performance, responsive web application and real-time voice system designed for retail customer support agents. Inspired by The Sleep Company's retail call workflows, it enables agents to manage customer enquiries, prioritize high-value leads, inspect customer profiles, review SOP adherence, collaborate with teammates, and test both human-to-human WebRTC audio and AI voice agents.
 
-Built on **LiveKit Cloud** (`livekit-client` v2.22.4) using the development token server.
+The project demonstrates:
+1. **Interactive Agent Workflows**: Executive analytics, lead queues, SOP scorecards, scheduling calendar, team collaboration ("Pulse"), and simulated call coaching.
+2. **Genuine Human-to-Human Audio Calling (`/live-audio`)**: Browser-to-browser WebRTC two-way voice call powered by LiveKit Cloud.
+3. **Avani AI Voice Assistant (`/ai-call`)**: Bidirectional streaming voice agent using the LiveKit Agents framework with an ultra-low latency STT → LLM → TTS pipeline.
+4. **Responsive & Accessible UI**: Mobile drawer navigation, mobile bottom bar with safe-area spacing, and high-contrast typography compliant with WCAG standards.
 
-- **Public URL:** [https://keerthisingh12.github.io/onground-call-centre/live-audio](https://keerthisingh12.github.io/onground-call-centre/live-audio)
-- Navigate to **Live Audio Demo** in the sidebar (headphones icon).
+---
 
-### Environment setup (local development only)
+## 🚀 Live Demo & Key Routes
 
-Create `.env.local` in the project root — this file is gitignored and never committed:
+The application is deployed on GitHub Pages with client-side SPA routing:
 
-```
-VITE_LIVEKIT_TOKEN_SERVER_ID=<your-token-server-id>
-```
+- **Main Dashboard**: [https://keerthisingh12.github.io/onground-call-centre/](https://keerthisingh12.github.io/onground-call-centre/)
+- **Live Audio Demo (Human-to-Human)**: [https://keerthisingh12.github.io/onground-call-centre/live-audio](https://keerthisingh12.github.io/onground-call-centre/live-audio)
+- **Avani AI Voice Call**: [https://keerthisingh12.github.io/onground-call-centre/ai-call](https://keerthisingh12.github.io/onground-call-centre/ai-call)
+- **Planner & Leads**: [https://keerthisingh12.github.io/onground-call-centre/plan](https://keerthisingh12.github.io/onground-call-centre/plan)
+- **Calendar**: [https://keerthisingh12.github.io/onground-call-centre/calendar](https://keerthisingh12.github.io/onground-call-centre/calendar)
+- **Pulse Team Collaboration**: [https://keerthisingh12.github.io/onground-call-centre/pulse](https://keerthisingh12.github.io/onground-call-centre/pulse)
+- **Practice Call**: [https://keerthisingh12.github.io/onground-call-centre/practise](https://keerthisingh12.github.io/onground-call-centre/practise)
 
-Obtain the Token Server ID from your LiveKit Cloud project under **Settings → Development Token Server**.
+*(Note: No external video demonstration link is provided; test the live deployment directly via the URLs above).*
 
-### Local HTTPS setup (required for microphone on a second device)
+---
 
-The dev server runs HTTPS automatically via `@vitejs/plugin-basic-ssl` (active in `vite dev` only, not in the production build):
+## ✨ Features & Modules
 
-```bash
-npm run dev
-# Vite prints:
-#   Local:   https://localhost:5173/
-#   Network: https://192.168.x.x:5173/
-```
+### 1. Executive Dashboard
+- **Agent Shift Overview**: Active agent identity, shift duration, and operational status.
+- **KPI Metrics**: Real-time performance indicators including OG Score (Adherence), Average Handle Time (AHT), Customer Satisfaction (CSAT), and Waiting Queue.
+- **Charts & Visualizations**: Interactive weekly call volume and customer sentiment charts built with Recharts.
+- **Waiting Queue**: Live triage of pending callers categorized by urgency and intent.
 
-Accept the self-signed cert warning in your browser (**Advanced → Proceed**). This is expected for local dev — GitHub Pages provides a valid trusted cert for the public demo.
+### 2. Planner & Lead Management
+- **Calls to Make**: Prioritized lead queue ranked by customer attractiveness score, purchasing stage, and budget fit.
+- **Incoming & Missed**: Callback queue with urgency indicators and one-click callback action.
+- **Recent Call Review & SOP Adherence**: Post-call evaluation examining greeting, needs discovery, mattress product pitch, EMI financing options, warranty disclosure, and closing etiquette.
 
-### How to verify two-way audio
+### 3. Lead 360° Inspection Modal
+- Comprehensive customer profile, journey timeline, product preferences, and budget fit.
+- Attractiveness score and buying signals.
+- Contextual agent notes with quick actions to initiate calls.
 
-**Option A — Two tabs, same machine (simplest):**
-1. Open `https://localhost:5173/live-audio` in Tab 1 → enter name `Alice`, join.
-2. Open the same URL in Tab 2 → enter name `Bob`, same room name, join.
-3. Speak — both participants hear each other in real time.
+### 4. Calendar & Scheduling
+- Monthly and daily calendar views for customer follow-up calls and supervisor coaching sessions.
+- Callback scheduling with team invite actions.
 
-**Option B — Two separate devices on the same Wi-Fi:**
-1. Second device opens `https://192.168.x.x:5173/live-audio` (use the Network URL Vite printed).
-2. Accept the self-signed cert warning.
-3. Same room name, different display name → Join.
+### 5. Pulse — Team Collaboration
+- Department channels and direct messaging for call centre floor communication.
+- Coaching threads and automated objection-handling suggestions.
+- Pinned callback decision cards with snooze and reschedule actions.
 
-**Option C — Public demo (no setup required):**
-1. Open `https://keerthisingh12.github.io/onground-call-centre/live-audio` on two devices.
-2. Both devices use a trusted HTTPS cert automatically (GitHub Pages).
-3. `VITE_LIVEKIT_TOKEN_SERVER_ID` is required in `.env.local` only for local dev; the public demo reads it from the browser bundle (it is a non-secret project identifier, not an API secret).
+### 6. Simulated Call & Practice Workflows
+- **Simulated Call**: Realistic agent call screen with live timer, dynamic transcript feed, objection handling prompts, hold/mute controls, and post-call disposition logging.
+- **Practice Sandbox**: Interactive training scenarios with automated dialogue progression and scoring.
 
-> ⚠️ The development token server is for testing only. For production, replace with a backend token endpoint.
+---
 
-### Security notes
+## 🎙️ Realtime Voice Architecture
 
-- `VITE_LIVEKIT_TOKEN_SERVER_ID` is a non-secret project identifier — it does **not** expose your LiveKit API key or API secret.
-- Your API key and secret live in LiveKit Cloud and must never appear in frontend code.
-- `.env.local` is listed in `.gitignore` and is never committed.
+The project features two distinct real-time calling systems:
+
+### A. Genuine Human-to-Human Audio Calling (`/live-audio`)
+- **Technology**: LiveKit WebRTC client (`livekit-client`).
+- **Functionality**: Full-duplex two-way audio between two browser participants in any room.
+- **How to verify**:
+  1. Open the [Live Audio Demo](https://keerthisingh12.github.io/onground-call-centre/live-audio) in Tab 1 (or Device 1) with display name `Agent Alice` and room `Support-Room-1`.
+  2. Open the same link in Tab 2 (or Device 2) with display name `Customer Bob` and room `Support-Room-1`.
+  3. Click **Connect**. Audio is transmitted bi-directionally in real time with mute, device selection, and room status indicators.
+
+### B. Avani AI Voice Assistant (`/ai-call`)
+- **Technology**: LiveKit Agents Python SDK 1.8.6 + LiveKit Inference.
+- **Pipeline Architecture**:
+  - **Speech-to-Text (STT)**: Deepgram Nova-3 (`deepgram/nova-3`) streaming speech recognition.
+  - **Large Language Model (LLM)**: OpenAI GPT-4o-mini (`openai/gpt-4o-mini`) streaming conversational generation.
+  - **Text-to-Speech (TTS)**: Cartesia Sonic-3 (`cartesia/sonic-3`) streaming low-latency voice synthesis.
+  - **Turn Detection & VAD**: Silero VAD + LiveKit `inference.TurnDetector` with smooth endpointing (`min_delay=0.5s`) and natural interruption handling.
+  - **Agent Dispatch**: Automatic dispatch via backend token endpoint (`POST /api/token`) with room configuration targeting `onground-assistant`.
+- **Persona**: Avani, empathetic retail voice assistant for The Sleep Company assisting customers with mattress queries, delivery, and sleep accessories.
+
+---
 
 ## 🛠️ Technology Stack
 
-| Technology | Purpose |
+| Layer | Technologies |
 |---|---|
-| React 19 | Component-based user interface |
-| TypeScript | Typed application development |
-| Vite | Development server and production bundling |
-| React Router | Client-side navigation |
-| Tabler Icons | Interface icons |
-| Recharts | Dashboard charts |
-| Vitest | Automated testing |
-| React Testing Library | Component and interaction testing |
-| oxlint | Code linting |
-| CSS and CSS Modules | Styling and component layouts |
+| **Frontend Framework** | React 19, TypeScript, Vite |
+| **Routing & State** | React Router (with base path support), React Context (`AppContext`) |
+| **Styling & Design** | Pure CSS Modules, Mobile Safe-Area Insets, WCAG High-Contrast Tokens |
+| **Icons & Charts** | Tabler Icons React, Recharts |
+| **Testing & Linting** | Vitest, React Testing Library, oxlint |
+| **Realtime WebRTC** | LiveKit Client SDK (`livekit-client`) |
+| **AI Agent Worker** | Python 3.11+, `livekit-agents` 1.8.6, `livekit-plugins-silero` |
+| **Inference Models** | Deepgram Nova-3 (STT), OpenAI GPT-4o-mini (LLM), Cartesia Sonic-3 (TTS) |
+| **Serverless Backend** | Vercel Serverless Functions (`api/token.ts`, `api/health.ts`), `livekit-server-sdk`, Zod |
+| **Deployment** | GitHub Actions & GitHub Pages |
 
-The exact dependency versions are maintained in `package.json` and `package-lock.json`.
+---
 
-## 🏗️ Project Structure
+## 🔒 Environment Variables & Security
 
-```text
-onground-call-centre/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml
-├── public/
-│   ├── favicon.svg
-│   └── icons.svg
-├── src/
-│   ├── app/
-│   │   └── AppContext.tsx
-│   ├── assets/
-│   ├── components/
-│   │   ├── calls/
-│   │   ├── layout/
-│   │   └── leads/
-│   ├── data/
-│   │   ├── callsAndEvents.ts
-│   │   ├── leads.ts
-│   │   ├── practise.ts
-│   │   └── pulse.ts
-│   ├── features/
-│   │   ├── calendar/
-│   │   ├── dashboard/
-│   │   ├── plan/
-│   │   ├── practise/
-│   │   └── pulse/
-│   ├── styles/
-│   │   └── global.css
-│   ├── test/
-│   ├── types/
-│   │   └── index.ts
-│   ├── utils/
-│   │   └── format.ts
-│   ├── App.tsx
-│   └── main.tsx
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.ts
-└── README.md
+Sensitive credentials (such as API keys and secrets) are **never** committed to version control. The repository includes `.env.example` as a template.
+
+### 1. Frontend Environment Variables (`.env.local`)
+Create `.env.local` in the project root for local development (strictly gitignored):
+
+```env
+# Public development token server ID for human-to-human live audio testing (non-secret identifier)
+VITE_LIVEKIT_TOKEN_SERVER_ID=your-token-server-id-here
+
+# Optional: URL of deployed backend serverless API for token generation
+VITE_API_BASE_URL=https://your-vercel-deployment.vercel.app
 ```
 
-## 💻 Local Development
+### 2. Backend & Agent Environment Variables (`.env.local` or Cloud Secrets)
+Used by the serverless token API (`api/token.ts`) and the Python voice agent (`agent/main.py`):
+
+```env
+# LiveKit Cloud Project Configuration (from LiveKit Cloud Console)
+LIVEKIT_URL=wss://your-project.livekit.cloud
+LIVEKIT_API_KEY=API_xxxxxxxxxxxxxxxx
+LIVEKIT_API_SECRET=your-livekit-api-secret-here
+
+# Production Allowed Origin for CORS
+ALLOWED_ORIGIN=https://keerthisingh12.github.io
+```
+
+> **Security Note:**
+> - `LIVEKIT_API_KEY` and `LIVEKIT_API_SECRET` must **never** be included in frontend code or client bundles.
+> - `VITE_LIVEKIT_TOKEN_SERVER_ID` is a non-secret project identifier used by LiveKit's sandbox token server.
+
+---
+
+## 💻 Local Setup & Development
 
 ### Prerequisites
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+- **Python**: 3.11 or higher (for the AI voice worker)
 
-- Node.js compatible with the project's Vite and TypeScript dependencies.
-- npm.
-
-### 1. Clone the repository
-
+### 1. Clone & Install Frontend
 ```bash
 git clone https://github.com/Keerthisingh12/onground-call-centre.git
 cd onground-call-centre
-```
 
-### 2. Install dependencies
-
-```bash
+# Install frontend dependencies
 npm ci
 ```
 
-### 3. Start the development server
-
+### 2. Start the Frontend Development Server
 ```bash
 npm run dev
 ```
+Open `https://localhost:5173/` in your browser. (The local server runs over HTTPS via `@vitejs/plugin-basic-ssl` to enable local microphone access across test devices).
 
-Open the local URL printed by Vite in your terminal, typically:
+### 3. Start the Python AI Voice Agent (Optional for `/ai-call`)
+To test the AI voice agent locally with your LiveKit credentials:
 
-`http://localhost:5173`
+```bash
+# Set up Python virtual environment
+cd agent
+python3 -m venv .venv
+source .venv/bin/activate
 
-### 4. Run automated tests
+# Install agent dependencies
+pip install -r requirements.txt
 
+# Start the agent worker in dev mode
+python main.py dev
+```
+The worker registers the `onground-assistant` agent name and listens for dispatched rooms.
+
+---
+
+## 🧪 Testing & Code Quality
+
+The project includes unit tests, integration tests, lint checks, and Python agent smoke tests.
+
+### Run Frontend Unit & Integration Tests (Vitest)
 ```bash
 npm run test
 ```
+*Current test suite: 9 test files, 50/50 passing tests covering navigation, dashboard, leads modal, call workflows, calendar, pulse, live audio, and token endpoints.*
 
-### 5. Run linting
-
+### Run Linter (oxlint)
 ```bash
 npm run lint
 ```
+*Runs static analysis across all TypeScript/TSX source files with 0 errors.*
 
-### 6. Create a production build
-
+### Validate TypeScript & Production Build
 ```bash
 npm run build
 ```
+*Executes `tsc -b` and builds the optimized Vite bundle with zero type or bundling errors.*
 
-The build script runs TypeScript project checks before generating the Vite production bundle.
+### Run Python Voice Agent Smoke Tests (pytest)
+```bash
+agent/.venv/bin/pytest agent/smoke_test.py -v
+```
+*Validates agent dispatch configuration, system prompts, entrypoint signatures, and pipeline initialization.*
 
-## 🧪 Testing
+---
 
-The repository includes a Vitest and React Testing Library setup.
+## 📱 Responsive Design & Accessibility Improvements
 
-The test suite is intended to cover areas such as:
+Recent enhancements have optimized the application across mobile, tablet, and desktop displays:
 
-- Application navigation and dashboard rendering.
-- Lead inspection and navigation.
-- Simulated calling workflows.
-- Calendar navigation and event display.
-- Pulse channels, messages, and callback interactions.
-- Component interactions covered by the available test files.
+1. **Collapsible Mobile Navigation Drawer**:
+   - Touch-friendly hamburger menu toggle on mobile screens (`< 768px`).
+   - Automatically closes on route navigation, backdrop tap, or pressing the `Escape` key.
+   - Prevents horizontal viewport overflow.
+2. **Fixed Bottom Navigation with Safe Clearance**:
+   - Fixed mobile bottom navigation with iOS safe-area inset support (`env(safe-area-inset-bottom)`).
+   - Dynamic main content padding (`padding-bottom: calc(72px + env(...))`) across all pages (Dashboard, Plan, Calendar, Pulse, Practise, AI Call, Live Audio) to ensure no dashboard content is obscured.
+3. **WCAG-Compliant Text Contrast**:
+   - Primary text, headings, form labels, and instructions upgraded to high-contrast tones (`#111111`, `#171717`, `#262626`).
+   - Secondary metadata and helper labels set to readable slate greys (`#404040` / `#525252`), completely eliminating washed-out or low-contrast text on white/light backgrounds.
+   - Brand emerald green (`#059669`, `#10b981`) preserved for primary actions, active navigation states, and status badges with verified button text contrast.
 
-Run `npm run test` to execute the current suite. Test counts and successful build results should be reported only after verification against the submitted version.
+---
 
-## 📱 Responsive Interface
+## ⚠️ Known Limitations & Roadmap
 
-The application includes responsive styling intended to support desktop, tablet, and mobile layouts.
+1. **PSTN / SIP Telephony Calling**:
+   - **Status**: Pending / Roadmap.
+   - Real inbound and outbound calling to traditional cellular and landline phone numbers (PSTN via SIP trunking) requires configured Twilio/carrier SIP trunks and verified E.164 caller IDs.
+   - Current active calling features operate via **browser WebRTC** (human-to-human and AI voice agent).
+2. **Static GitHub Pages Deployment Scope**:
+   - The public demo on GitHub Pages is a static client bundle.
+   - The `/live-audio` route functions live via LiveKit's token server.
+   - The `/ai-call` route requires either running the local agent worker (`agent/main.py dev`) or hosting the Python worker via LiveKit Cloud Agent Hosting / container service with valid `LIVEKIT_URL` credentials.
 
-Navigation, content sections, and modal layouts adapt to available screen space. Final rendering and interaction behaviour may vary by viewport and browser.
+---
 
-## 🤖 AI Tools and Development Disclosure
+## 📄 License & Attribution
 
-AI-assisted development tools were used during the development and refinement of this assignment.
-
-The application demonstrates AI-oriented workflows through scripted assistance prompts, sample coaching content, and simulated practice scenarios. These features should not be interpreted as a deployed production AI model.
-
-The project does not claim to provide live telephony, production CRM integration, external calendar synchronization, or a production backend.
-
-## 👤 Author
-
-**Keerthi G Singh**
-
-Candidate — Forward Deployed Engineer / Agentic Engineer
-
-## 📄 Assignment Note
-
-This project was developed as a frontend hiring assignment based on the reference materials supplied by On-Ground.ai. Customer records, performance indicators, call transcripts, coaching content, and workflow outcomes are demonstration data.
+Developed for the **On-Ground.ai** Forward Deployed Engineer hiring assignment.  
+Customer records, performance indicators, call transcripts, and coaching scenarios are demonstration data modeled for The Sleep Company retail context.

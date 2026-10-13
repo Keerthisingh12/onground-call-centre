@@ -1,0 +1,4 @@
+api/__tests__
+agent
+.github
+*.bak

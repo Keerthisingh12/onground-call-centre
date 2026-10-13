@@ -13,12 +13,12 @@
 .title {
   font-size: 20px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .subtitle {
   font-size: 13px;
-  color: #8e8e93;
+  color: #404040;
   margin-top: 2px;
 }
 
@@ -53,7 +53,7 @@
 .rank {
   font-size: 12px;
   font-weight: 800;
-  color: #8e8e93;
+  color: #404040;
   min-width: 24px;
 }
 
@@ -77,12 +77,12 @@
 .name {
   font-size: 14.5px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111111;
 }
 
 .interest {
   font-size: 12.5px;
-  color: #8e8e93;
+  color: #404040;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -101,14 +101,14 @@
 
 .scoreTag {
   font-size: 10.5px;
-  color: #a8a8ad;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.3px;
   margin-top: 1px;
 }
 
 .chevron {
-  color: #c5c5c5;
+  color: #737373;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -126,7 +126,7 @@
 .sectionLabel {
   font-size: 12px;
   font-weight: 800;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   margin-top: 10px;
@@ -134,7 +134,7 @@
 
 .story {
   font-size: 13.5px;
-  color: #3a3a42;
+  color: #111111;
   line-height: 1.5;
 }
 
@@ -153,14 +153,14 @@
 .boxLabel {
   font-size: 10.5px;
   font-weight: 800;
-  color: #8e8e93;
+  color: #404040;
   text-transform: uppercase;
 }
 
 .boxVal {
   font-size: 13px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111111;
   margin-top: 2px;
 }
 
@@ -218,11 +218,11 @@
   justify-content: center;
   gap: 5px;
   padding: 10px 16px;
-  border: 1.5px solid #e5e5ea;
+  border: 1.5px solid #d1d5db;
   border-radius: 10px;
   font-size: 13.5px;
   font-weight: 700;
-  color: #555;
+  color: #111111;
   background: #fff;
   cursor: pointer;
   transition: background 0.15s;
@@ -245,12 +245,12 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid #e5e5ea;
+  border: 1px solid #d1d5db;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: #111111;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -261,12 +261,12 @@
 }
 
 .pagerBtn:disabled {
-  opacity: 0.35;
+  opacity: 0.55;
   cursor: not-allowed;
 }
 
 .pagerInfo {
   font-size: 13px;
   font-weight: 700;
-  color: #6b6b74;
+  color: #404040;
 }
